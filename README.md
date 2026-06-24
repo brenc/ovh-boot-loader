@@ -3,10 +3,10 @@
 CLI to manage the **EFI boot loader path** (`efiBootloaderPath`) on OVH dedicated
 servers via the [OVH API](https://api.ovh.com/).
 
-This was built to fix a [Proxmox 9.2 regression](https://docs.ovhcloud.com/en/guides/bare-metal-cloud/dedicated-servers/boot-process)
+This was built to fix a [Proxmox 9.2 regression](https://forum.proxmox.com/threads/memtest-as-default-eefind-option.184148/post-858394)
 where Proxmox's update drops a `memtest86+.efi` binary into the EFI System
-Partition, which then becomes the most recent ESP entry. rEFInd (the OVH boot
-loader) picks the most recently-modified `.efi` file, so the server boots into
+Partition, which then becomes the most recent ESP entry. rEFInd (the [OVH boot
+loader](https://docs.ovhcloud.com/en/guides/bare-metal-cloud/dedicated-servers/boot-process)) picks the most recently-modified `.efi` file, so the server boots into
 memtest instead of the actual Proxmox installer. The fix is to set
 `efiBootloaderPath = \efi\systemd\systemd-bootx64.efi` on the OVH backend, which
 forces rEFInd to launch systemd-boot regardless of ESP timestamps.
