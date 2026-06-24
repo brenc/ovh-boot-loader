@@ -1,0 +1,39 @@
+{
+  "bin": {
+    "ovh-boot-loader": "src/ovh-boot-loader.ts"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^14.0.0",
+    "commander": "^14.0.3",
+    "zod": "^4.4.3"
+  },
+  "description": "CLI to manage the EFI boot loader path (efiBootloaderPath) on OVH dedicated servers",
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "keywords": [
+    "ovh",
+    "dedicated-server",
+    "efi",
+    "boot",
+    "rEFInd",
+    "proxmox",
+    "systemd-boot"
+  ],
+  "license": "MIT",
+  "main": "src/ovh-boot-loader.ts",
+  "name": "ovh-boot-loader",
+  "scripts": {
+    "build": "bun build src/ovh-boot-loader.ts --bytecode --compile --minify --sourcemap --outfile build/ovh-boot-loader",
+    "clean": "rm -rf build",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

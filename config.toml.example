@@ -1,0 +1,15 @@
+# OVH credentials for the ovh-boot-loader tool.
+# Copy this file to config.toml and fill in the values.
+#
+# The consumer key must be created with these rights (see README.md):
+#   GET  /dedicated/server
+#   GET  /dedicated/server/*
+#   PUT  /dedicated/server/*
+# Default region is "ca" (Canadian endpoint, api.ovh.com);
+# set region = "eu" if your account uses the European endpoint.
+[ovh]
+appKey = "yourApplicationKey"
+appSecret = "yourApplicationSecret"
+consumerKey = "yourConsumerKey"
+
+# region = "eu"
